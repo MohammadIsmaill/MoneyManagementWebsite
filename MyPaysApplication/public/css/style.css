@@ -1,0 +1,218 @@
+:root{
+    --payments2-color:#02C39A;
+    --payments1-color:teal;
+    --danger-color:#dd1c14;
+    --debts1-color:#8661C1;
+    --debts2-color:#858AE3;
+    --income2-color:#757780;
+    --income1-color:#E83151;
+    --income3-color:#3E4E50;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto mono', monospace;
+}
+
+body {
+  
+    max-width:1400px;
+    margin:0 auto;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+ul{
+    list-style: none;
+}
+header{
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+    
+}
+header .logo{
+    margin:1rem;
+}
+
+header .nav-list li{
+    margin:1rem;
+    font-size:1.2rem;
+}
+
+.flex{
+    display:flex;
+
+}
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+.flex-between{
+    align-items: center;
+    justify-content: space-between;
+}
+.text-center{
+    text-align: center;
+}
+.flex-col{
+    flex-direction: column;
+}
+.text-payments1{
+    color:var(--payments1-color);
+}
+.text-payments2{
+    color:var(--payments2-color);
+}
+.input-1 {
+    height: 2.5rem;
+    width: 16rem;
+    padding: 10px;
+}
+.my-2{
+    margin:2rem 0;
+}
+.my-3{
+    margin:3rem 0;
+}
+.my-4{
+    margin:4rem 0;
+}
+.border-payments{
+    border:2px solid var(--payments1-color);
+}
+.border-earnings{
+    border:2px solid var(--income1-color);
+}
+.border-debts{
+    border:2px solid var(--debts1-color);
+}
+.p-1{
+    padding:1rem;
+}
+.text-debts1{
+    color:var(--debts1-color);
+}
+.text-debts2{
+    color:var(--debts2-color);
+}
+.text-income1{
+    color:var(--income1-color);
+}
+.text-income2{
+    color:var(--income2-color);
+}
+.link-danger{
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #DD1C1A;
+    font-size: 1rem;
+}
+
+.link-danger:hover{
+    text-decoration: underline;
+}
+
+.my-1{
+    margin:1rem 0 !important;
+}
+
+
+.table-payments tr th,
+.table-payments tr td{
+    text-align:center;
+    padding:10px;
+}
+
+.table-payments,
+.table-payments td{
+    border:1px solid var(--payments2-color);
+}
+
+.table-payments thead,
+.table-payments tfoot{
+    background:var(--payments2-color);
+    color:#fff;
+}
+
+/* -------------------- */
+.table-debts tr th,
+.table-debts tr td{
+    text-align:center;
+    padding:10px;
+}
+
+.table-debts,
+.table-debts td{
+    border:1px solid var(--debts1-color);
+}
+
+.table-debts thead,
+.table-debts tfoot{
+    background:var(--debts1-color);
+    color:#fff;
+}
+
+/* -------------------------- */
+.table-income tr th,
+.table-income tr td{
+    text-align:center;
+    padding:10px;
+}
+
+.table-income,
+.table-income td{
+    border:1px solid var(--income1-color);
+}
+
+.table-income thead,
+.table-income tfoot{
+    background:var(--income1-color);
+    color:#fff;
+}
+
+.btn{
+    outline:none;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+    transition:all 0.3s ease;
+    
+}
+.btn-payments {
+    background: var(--payments1-color);
+    color: #fff;
+}
+
+.btn-earnings{
+    background:var(--income1-color);
+    color:#fff;
+}
+.btn-debts{
+    background:var(--debts1-color);
+    color:#fff;
+}
+
+.btn-debts:hover{
+    background:rgba(134,97,193,0.8);
+}
+
+.btn-earnings:hover{
+    background:rgba(232,49,81,0.8);
+}
+.btn-payments:hover {
+    background: rgba(0, 128, 128, 0.8);
+}
+
+i {
+    margin-right: .4rem;
+    ;
+}
