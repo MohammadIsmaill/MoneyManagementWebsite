@@ -1,2 +1,2 @@
 # MoneyManagementWebsite
-Manage your money by saving your debts, earnings, and payments.
+A simple website for saving the info about debts, payments, and earnings. There is also a configuration file for a simple load balancer using nginx for the website.
