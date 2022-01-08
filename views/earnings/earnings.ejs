@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/links') %>
+</head>
+
+
+
+<body>
+    <%- include('../partials/navbar') %>
+        <section class="flex flex-col flex-center my-1">
+
+
+            <div class="flex flex-center flex-col">
+                <h1 class="text-income1 my-1">Earnings</h1>
+                <a href="/earnings/new" class="text-income2">New Earning</a>
+                <h4 class="my-1 text-income1">Total Earnings: <span class="text-income2">
+                        <%=total%> L.L.
+                    </span> - Total
+                    Items:<span class="text-income2">
+                        <%=earnings.length%> 
+                    </span></h4>
+            </div>
+
+
+            <table class="table-income">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Edit Earning</th>
+                        <th>Delete Earning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(let earning of earnings) {%>
+                        <tr>
+                            <td>
+                                <%=earning.name%>
+                            </td>
+                            <td>
+                                <%= earning.price %>
+                            </td>
+                            <td>
+                                <%= earning.date %>
+                            </td>
+                            <td><a href="/earnings/edit/<%=earning._id%>" class="text-income2">Edit</a></td>
+                            <td>
+                                <form action="/earnings/delete/<%=earning._id%>?_method=DELETE" method="POST"><button
+                                        class="link-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%}%>
+                </tbody>
+            </table>
+        </section>
+</body>
+
+</html>

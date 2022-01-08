@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/links') %>
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+        <section class="flex flex-center flex-col my-1">
+            <div class=" flex flex-center flex-col">
+                <h1 class="text-payments1 my-1">Payments</h1>
+                <a href="/payments/new" class="text-payments2">New Payment</a>
+                <h4 class="my-1 text-payments1">Total Payments: <span class="text-payments2">
+                        <%= total %> L.L.
+                    </span> - Total
+                    Items:
+                    <span class="text-payments2">
+                        <%=payments.length%>
+                    </span>
+                </h4>
+
+            </div>
+
+
+            <table class="table-payments">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Edit Payment</th>
+                        <th>Delete Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% for(let payment of payments) {%>
+                        <tr>
+                            <td>
+                                <%= payment.name%>
+                            </td>
+                            <td>
+                                <%= payment.price %>
+                            </td>
+                            <td>
+                                <%= payment.date %>
+                            </td>
+                            <td><a href="/payments/edit/<%=payment._id%>" class="text-payments2">Edit</a></td>
+                            <td>
+                                <form action="/payments/delete/<%=payment._id%>?_method=Delete" method="POST"><button
+                                        class="link-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%}%>
+                </tbody>
+            </table>
+        </section>
+</body>
+
+</html>

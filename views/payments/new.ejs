@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/links') %>
+
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+
+        <section class="my-3">
+            <div class="flex flex-center flex-col">
+                <h1 class="text-payments1 my-1">New Payment</h1>
+                <form action="/payments/new" class="flex flex-center flex-col border-payments p-1" method="POST">
+                    <input type="text" class="my-1 input-1" name="name" placeholder="Name">
+                    <input type="number" class="my-1 input-1" name="price" placeholder="Price">
+                    <input type="date" class="my-1 input-1" name="date" value="2018-07-22">
+                    <button type=" submit" class="my-1 btn btn-payments">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+
+</body>
+
+</html>
