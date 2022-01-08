@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/links') %>
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <%- include('../partials/navbar') %>
+
+        <!-- body -->
+        <section class="flex flex-center flex-col my-1">
+            <div class="flex flex-center flex-col">
+                <h1 class="text-debts1 my-1">Debts</h1>
+                <a href="/debts/new" class="text-debts2">New Debt</a>
+                <h4 class="my-1 text-debts1">Total Debts: <span class="text-debts2">
+                        <%=total%> L.L.
+                    </span> - Total
+                    Items: <span class="text-debts2">
+                        <%=debts.length%>
+                    </span> </h4>
+            </div>
+
+
+            <table class="table-debts">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Edit Debit</th>
+                        <th>Delete Debit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let debt of debts) {%>
+                        <tr>
+                            <td>
+                                <%= debt.name%>
+                            </td>
+                            <td>
+                                <%= debt.price%>
+                            </td>
+                            <td>
+                                <%= debt.date %>
+                            </td>
+                            <td><a href="/debts/edit/<%=debt._id%>" class="text-debts2">Edit</a></td>
+                            <td>
+                                <form action="/debts/delete/<%=debt._id%>?_method=DELETE" method="POST"><button
+                                        class="link-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%}%>
+
+                </tbody>
+            </table>
+        </section>
+</body>
+
+</html>

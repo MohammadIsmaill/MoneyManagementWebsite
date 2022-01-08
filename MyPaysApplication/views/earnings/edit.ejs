@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/links') %>
+</head>
+<body>
+
+    <%- include('../partials/navbar') %>
+
+
+        <section class="my-3">
+            <div class="flex flex-center flex-col">
+                <h1 class="text-income1 my-1">Edit Earning</h1>
+                <form action="/earnings/edit/<%=earning._id%>?_method=PUT" class="flex flex-center flex-col border-earnings p-1" method="POST">
+                    <input type="text" name ="name" class="my-1 input-1" placeholder="Name" value="<%=earning.name %>">
+                    <input type="number" name = "price" class="my-1 input-1" placeholder="Price" value="<%=earning.price %>">
+                    <input type="date" name="date" class="my-1 input-1" value="<%=earning.date%>">
+                    <button type="submit" class="my-1 btn btn-earnings">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+
+</body>
+
+</html>
